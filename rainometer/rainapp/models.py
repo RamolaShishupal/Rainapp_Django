@@ -1,15 +1,25 @@
 from django.db import models
 
-class Volenteer(models.Model):
-    name = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
-    password = models.CharField(max_length=30)
-class Rainstation(models.Model):
-    id = models.AutoField(primary_key=True)
-    location= models.CharField(max_length=30)
 
-class Rain(models.Model):
-    entry = models.ForeignKey(Rainstation, on_delete=models.CASCADE)
+class volenteer(models.Model):
+    name=models.CharField(max_length=50)
+    email = models.EmailField()
+    password=models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
+
+
+class raindata(models.Model):
+    enterytime=models.DateTimeField()
+    rain=models.IntegerField()
+
+    def __str__(self):
+        return "%s - %s " % (self.id, self.rain)
+
+
+
+
+
 
 
 

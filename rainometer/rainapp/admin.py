@@ -1,8 +1,10 @@
 from django.contrib import admin
-from .models import Volenteer
-from .models import Rainstation
-from .models import Rain
+
 
 # Register your models here
+from . models import volenteer
+from .models import raindata
 
-admin.site.register(Volenteer)
+admin.site.register(volenteer)
+admin.site.register(raindata)
+
